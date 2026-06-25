@@ -1,3 +1,4 @@
+'use strict';
 /*
 Сделать функцию для настольных игр. 
 Она которая принимает тип dice, который надо бросить:
@@ -6,7 +7,7 @@ d4, d6, d8, d10, d12, d16, d20
 
 d6 - возможные значения - 1, 2, 3, 4, 5, 6
 */
-DICE_2_BOUNDS = new Map(Object.entries({
+const DICE_2_BOUNDS = new Map(Object.entries({
     d4: [1,4],
     d6: [1,6],
     d8: [1,8],
@@ -17,7 +18,7 @@ DICE_2_BOUNDS = new Map(Object.entries({
 }));
 
 function randomInt(min, max) {
-    return Math.round(Math.random() * (max-min) + min);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function throwDice(dice) {
