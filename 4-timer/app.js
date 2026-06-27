@@ -14,21 +14,22 @@ const NEXT_YEAR = NEXT_YEAR_DATE.getFullYear();
 
 
 /* utils */
-function getDuration(unixTimestamp) {
-  const date = new Date(unixTimestamp);
-  return {
-    months: date.getMonth(),
-    days: date.getDate() - 1,
-    hours: date.getHours(),
-    minutes: date.getMinutes(),
-    seconds: date.getSeconds()
-  };
+function getDuration() {
+    const now = new Date();
+    const diff = NEXT_YEAR_DATE.getTime() - (now).getTime();
+    const date = new Date(diff);
+    return {
+        months: date.getMonth(),
+        days: date.getDate() - 1,
+        hours: date.getHours(),
+        minutes: date.getMinutes(),
+        seconds: date.getSeconds()
+    };
 }
 
 
 function showUntilNewYear() {
-    const diff = NEXT_YEAR_DATE.getTime() - (new Date()).getTime();
-    const duration = getDuration(diff);
+    const duration = getDuration();
     const formatter = new Intl.DurationFormat('ru-RU', { style: 'long' });
     const result = formatter.format(duration);
     page.main.textContent = result;
@@ -37,7 +38,7 @@ function showUntilNewYear() {
 
 /* renders */
 function render() {
-    page.header.textContent = `До Нового ${NEXT_YEAR} Года осталось:`
+    page.header.textContent = `До Нового Года ${NEXT_YEAR} осталось:`
 }
 
 
