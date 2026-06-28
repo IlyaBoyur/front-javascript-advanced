@@ -1,0 +1,21 @@
+body {
+    font-family: 'Comfortaa', cursive;
+    margin: 0;
+    font-weight: 400;
+    font-size: 46px;
+}
+
+.header {
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: azure;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: azure;
+}
