@@ -1,3 +1,4 @@
+'use strict';
 /*
 Спроектируйте класс Billing со свойством amount 
 и методом calculateTotal для расчёта счёта. 
